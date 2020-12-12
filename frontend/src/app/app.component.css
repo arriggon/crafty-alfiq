@@ -1,0 +1,30 @@
+#page {
+  background-color: #303030;
+  height: 100vh;
+  width: 100vw;
+}
+
+.content {
+  width: 50vw;
+  height: 90vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-left: 25vw;
+}
+
+.item-bestand-table {
+  width: 100%;
+}
+
+.item-bestand-container {
+  height: 75vh;
+}
+
+.column {
+  width: 7vw;
+}
+
+::ng-deep .inputCol {
+  width: 6vw;
+}
