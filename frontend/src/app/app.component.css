@@ -27,4 +27,20 @@
 
 ::ng-deep .inputCol {
   width: 6vw;
+
+}
+
+.spacer {
+  flex: 1 1 auto;
+}
+
+.bottom-menu {
+  height: 5vh;
+  position: absolute;
+  bottom: 0;
+}
+
+.card-button {
+  position: absolute;
+  right: 5%;
 }

@@ -2,53 +2,66 @@
   <div class="content">
     <mat-card>
       <mat-card-title>
-        Item Management
+        <span>Item Management</span>
+        <button mat-mini-fab color="accent" class="card-button" (click)="addItem()">
+          <mat-icon>add_shopping_cart</mat-icon>
+        </button>
       </mat-card-title>
       <mat-card-content class="item-bestand-container">
         <table mat-table [dataSource]="dataSource" class="item-bestand-table">
           <ng-container matColumnDef="name">
             <th mat-header-cell *matHeaderCellDef>Name</th>
             <td mat-cell *matCellDef="let item" class="column">
-              <span *ngIf="!item.edit_enabled; else nameEdit">{{item.name}}</span>
-              <ng-template #nameEdit>
-                <input class="inputCol" matInput type="text" [value]="item.name" (change)="item.name = $event.target.value">
-              </ng-template>
+              <mat-form-field class="inputCol">
+                <input class="inputCol" matInput type="text"
+                [value]="item.name"
+                (change)="item.name = $event.target.value"
+                placeholder="Item name">
+              </mat-form-field>
             </td>
           </ng-container>
           <ng-container matColumnDef="base_price">
             <th mat-header-cell *matHeaderCellDef>Base Price</th>
             <td mat-cell *matCellDef="let item" class="column">
-              <span *ngIf="!item.edit_enabled; else basePriceEdit">{{item.base_price}}</span>
-              <ng-template #basePriceEdit>
-                <input class="inputCol" matInput type="number" [value]="item.base_price" (change)="item.base_price = $event.target.value">
-              </ng-template>
+              <mat-form-field class="inputCol">
+                <input matInput
+                type="number" [value]="item.base_price"
+                placeholder="Price"
+                (change)="item.base_price = $event.target.value">
+              </mat-form-field>
             </td>
           </ng-container>
           <ng-container matColumnDef="range_lower">
-            <th mat-header-cell *matHeaderCellDef>Mutliplier From</th>
+            <th mat-header-cell *matHeaderCellDef>Mutliplier</th>
             <td mat-cell *matCellDef="let item" class="column">
-              <span *ngIf="!item.edit_enabled; else rangeLowerEdit">{{item.range_lower}}</span>
-              <ng-template #rangeLowerEdit>
-                <input class="inputCol" matInput type="number" [value]="item.range_lower" (change)="item.range_lower = $event.target.value">
-              </ng-template>
+              <mat-form-field class="inputCol">
+                <input matInput
+                type="number" [value]="item.range_lower"
+                placeholder="From"
+                (change)="item.range_lower = $event.target.value">
+              </mat-form-field>
             </td>
           </ng-container>
           <ng-container matColumnDef="range_upper">
-            <th mat-header-cell *matHeaderCellDef>Mutliplier To</th>
+            <th mat-header-cell *matHeaderCellDef></th>
             <td mat-cell *matCellDef="let item" class="column">
-              <span *ngIf="!item.edit_enabled; else rangeUpperEdit">{{item.range_upper}}</span>
-              <ng-template #rangeUpperEdit>
-                <input class="inputCol" matInput type="number" [value]="item.range_upper" (change)="item.range_upper = $event.target.value">
-              </ng-template>
+              <mat-form-field class="inputCol">
+                <input matInput
+                type="number" [value]="item.range_upper"
+                placeholder="To"
+                (change)="item.range_upper = $event.target.value">
+              </mat-form-field>
             </td>
           </ng-container>
           <ng-container matColumnDef="quantity">
             <th mat-header-cell *matHeaderCellDef>Quantity</th>
             <td mat-cell *matCellDef="let item" class="column">
-              <span *ngIf="!item.edit_enabled; else quantityEdit">{{item.quantity}}</span>
-              <ng-template #quantityEdit>
-                <input class="inputCol" matInput type="number" [value]="item.quantity" (change)="item.quantity = $event.target.value">
-              </ng-template>
+              <mat-form-field class="inputCol">
+                <input matInput
+                type="number" [value]="item.quantity"
+                placeholder="Quantity"
+                (change)="item.quantity = $event.target.value">
+              </mat-form-field>
             </td>
           </ng-container>
           <ng-container matColumnDef="actions">
@@ -57,26 +70,29 @@
               <button mat-mini-fab color="warn" title="Delete item" (click)="deleteItem(item.uuid)">
                 <mat-icon>delete</mat-icon>
               </button>
-              <button mat-mini-fab color="primary" title="Edit item" (click)="editItem(item.uuid)" *ngIf="!item.edit_enabled">
-                <mat-icon>edit</mat-icon>
-              </button>
-              <button mat-mini-fab color="primary" title="Save item" (click)="saveItem(item.uuid)" *ngIf="item.edit_enabled">
-                <mat-icon>done_all</mat-icon>
-              </button>
             </td>
           </ng-container>
 
           <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
           <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
         </table>
-
-        <mat-paginator [pageSizeOptions]="[13]" showFirstLastButtons></mat-paginator>
       </mat-card-content>
       <mat-card-actions>
-        <button mat-fab color="accent" (click)="addItem()">
-          <mat-icon>add_shopping_cart</mat-icon>
-        </button>
+        <mat-paginator
+        [pageSizeOptions]="[10,11,12,13,14,15,16,17,18,19,20]"
+        [pageSize]="14"
+        showFirstLastButtons></mat-paginator>
       </mat-card-actions>
     </mat-card>
   </div>
+  <mat-toolbar class="bottom-menu">
+    <span>Crafty Alfiq's Emporium</span>
+    <span class="spacer"></span>
+    <button mat-icon-button>
+      <mat-icon>monetization_on</mat-icon>
+    </button>
+    <button mat-icon-button>
+      <mat-icon>edit</mat-icon>
+    </button>
+  </mat-toolbar>
 </div>

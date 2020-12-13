@@ -28,10 +28,6 @@ export class AppComponent implements AfterViewInit {
     this.items = [...this.items, {
       uuid: uuidv4(),
       name: '',
-      base_price: 0,
-      range_lower: 1,
-      range_upper: 1,
-      quantity: 1,
       edit_enabled: false
     }];
 
@@ -40,17 +36,6 @@ export class AppComponent implements AfterViewInit {
 
   deleteItem(uuid: string): void {
     this.items = this.items.filter((item) => item.uuid !== uuid);
-    this.dataSource.data = this.items;
-  }
-
-  editItem(uuid: string): void {
-    const item = this.items.find((item) => item.uuid === uuid);
-    item.edit_enabled = true;
-    this.dataSource.data = this.items;
-  }
-
-  saveItem(uuid: string): void {
-    this.items.find((item) => item.uuid === uuid).edit_enabled = false;
     this.dataSource.data = this.items;
   }
 }
