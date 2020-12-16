@@ -1,0 +1,35 @@
+.item-bestand-table {
+  width: 100%;
+}
+
+.item-bestand-container {
+  height: 85vh;
+}
+
+.item-bestand-content {
+  height: 74vh;
+}
+
+.column {
+  width: 7vw;
+}
+
+::ng-deep .inputCol {
+  width: 6vw;
+
+}
+
+.add-button {
+  position: absolute;
+  right: 15%;
+}
+
+.save-button {
+  position: absolute;
+  right: 10%;
+}
+
+.sync-button {
+  position: absolute;
+  right: 5%;
+}

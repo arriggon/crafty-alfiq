@@ -9,33 +9,5 @@ import { v4 as uuidv4 } from 'uuid';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent implements AfterViewInit {
-
-  title = 'frontend';
-
-  displayedColumns: string[] = ['name', 'base_price', 'range_lower', 'range_upper', 'quantity', 'actions'];
-  items: Item[] = [];
-
-  dataSource = new MatTableDataSource<Item>(this.items);
-
-  @ViewChild(MatPaginator) paginator: MatPaginator;
-
-  ngAfterViewInit(): void {
-    this.dataSource.paginator = this.paginator;
-  }
-
-  addItem(): void {
-    this.items = [...this.items, {
-      uuid: uuidv4(),
-      name: '',
-      edit_enabled: false
-    }];
-
-    this.dataSource.data = this.items;
-  }
-
-  deleteItem(uuid: string): void {
-    this.items = this.items.filter((item) => item.uuid !== uuid);
-    this.dataSource.data = this.items;
-  }
+export class AppComponent {
 }

@@ -1,0 +1,23 @@
+<mat-card class="shop-content">
+  <mat-card-title>
+    <span>Shop</span>
+  </mat-card-title>
+  <mat-card-content>
+
+  </mat-card-content>
+  <mat-card-actions>
+    <mat-list>
+      <mat-list-item *ngFor="let item of (items$ | async)">
+        <mat-icon mat-list-icon>api</mat-icon>
+        <div mat-line>{{item.name}}</div>
+        <div mat-line>
+          <span style="color: gold;">{{convertPrice(item.base_price)[0]}}G</span>
+          <span style="color: silver;"> {{convertPrice(item.base_price)[1]}}S</span>
+          <span style="color: coral;"> {{convertPrice(item.base_price)[2]}}C</span>
+        </div>
+        <div>{{item.quantity}}x</div>
+        <div><button mat-button color="warn">Buy</button></div>
+      </mat-list-item>
+    </mat-list>
+  </mat-card-actions>
+</mat-card>
