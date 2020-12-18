@@ -1,3 +1,19 @@
 .shop-content {
   height: 85vh;
 }
+
+.gold-number {
+  color: goldenrod;
+}
+
+.silver-number {
+  color: silver;
+}
+
+.copper-number {
+  color: coral;
+}
+
+.spacer {
+  margin-right: 10px;
+}

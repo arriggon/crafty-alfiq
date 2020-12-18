@@ -14,8 +14,7 @@ export class ShopComponent implements OnInit {
   items$: Observable<Item[]>;
 
   constructor(private itemStore: ItemManagementStoreService,
-              private itemService: ItemManagementService,
-              private snackBar: MatSnackBar) { }
+              private itemService: ItemManagementService) { }
 
   ngOnInit(): void {
     this.sync();
@@ -36,7 +35,7 @@ export class ShopComponent implements OnInit {
 
   sync(): void {
     this.itemService.getManaged().toPromise().then(items => this.itemStore.setItems(items))
-    .then(() => this.snackBar.open('Synced!', 'x', { verticalPosition: 'top', duration: 1500 }));
+    .then();
   }
 
 }

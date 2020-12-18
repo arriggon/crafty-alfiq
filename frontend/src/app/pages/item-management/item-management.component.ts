@@ -48,8 +48,8 @@ export class ItemManagementComponent implements AfterViewInit, OnInit {
     this.itemService.setManaged(this.itemStore.getItems());
   }
 
-  sync(): void {
+  sync(display = false): void {
     this.itemService.getManaged().toPromise().then(items => this.itemStore.setItems(items))
-    .then(() => this.snackBar.open('Synced!', 'x', { verticalPosition: 'top', duration: 1500 }));
+    .then(() => display ? this.snackBar.open('Synced!', 'x', { verticalPosition: 'top', duration: 1500 }) : undefined);
   }
 }

@@ -5,6 +5,8 @@
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
+    "pages": "ng build --prod --base-href https://arriggon.github.io/crafty-alfiq/",
+    "postpages": "angular-cli-ghpages -d dist/frontend/ --no-silent",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"

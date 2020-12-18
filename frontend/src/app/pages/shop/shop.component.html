@@ -11,12 +11,12 @@
         <mat-icon mat-list-icon>api</mat-icon>
         <div mat-line>{{item.name}}</div>
         <div mat-line>
-          <span style="color: gold;">{{convertPrice(item.base_price)[0]}}G</span>
-          <span style="color: silver;"> {{convertPrice(item.base_price)[1]}}S</span>
-          <span style="color: coral;"> {{convertPrice(item.base_price)[2]}}C</span>
+          <span class="gold-number spacer">{{convertPrice(item.base_price)[0]}}G</span>
+          <span class="silver-number spacer">{{convertPrice(item.base_price)[1]}}S</span>
+          <span class="copper-number spacer">{{convertPrice(item.base_price)[2]}}C</span>
         </div>
-        <div>{{item.quantity}}x</div>
-        <div><button mat-button color="warn">Buy</button></div>
+        <div class="spacer">{{item.quantity}}x</div>
+        <div><button mat-button color="warn"><mat-icon>payments</mat-icon></button></div>
       </mat-list-item>
     </mat-list>
   </mat-card-actions>
