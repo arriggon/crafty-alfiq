@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
 import { Item } from 'src/app/model/item';
-import { ItemManagementService } from '../item-management/item-management.service';
 
 @Injectable({
   providedIn: 'root'
@@ -27,7 +26,7 @@ export class ItemManagementStoreService {
   }
 
   removeItem(item: Item): void {
-    const items = this.getItems().filter(i => i.uuid !== item.uuid);
+    const items = this.getItems().filter(i => i !== item);
     this.setItems(items);
   }
 }

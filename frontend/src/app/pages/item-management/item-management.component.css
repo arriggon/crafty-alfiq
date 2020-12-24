@@ -16,7 +16,6 @@
 
 ::ng-deep .inputCol {
   width: 6vw;
-
 }
 
 .add-button {
@@ -32,4 +31,12 @@
 .sync-button {
   position: absolute;
   right: 5%;
+}
+
+.actions-flex {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-content: center;
 }

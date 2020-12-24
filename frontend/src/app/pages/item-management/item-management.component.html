@@ -82,9 +82,12 @@
     </table>
   </mat-card-content>
   <mat-card-actions>
-    <mat-paginator
-    [pageSizeOptions]="[10]"
-    [pageSize]="10"
-    showFirstLastButtons></mat-paginator>
+    <div class="actions-flex">
+      <mat-paginator
+      [pageSizeOptions]="[10]"
+      [pageSize]="10"
+      showFirstLastButtons></mat-paginator>
+      <button mat-button (click)="generateShopItems()">Generate Shop Items</button>
+    </div>
   </mat-card-actions>
 </mat-card>
